@@ -93,8 +93,6 @@ module Rpush
 
     desc 'status', 'Show the internal status of the running Rpush instance.'
     def status
-      config_setup
-
       require 'rpush/daemon'
       rpc = Rpush::Daemon::Rpc::Client.new(rpush_process_pid)
       status = rpc.status
